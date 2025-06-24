@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <input type="text" id="cityInput" placeholder="Search for cities..." />
+      <button id="searchButton">Search</button>
+      <button id="detectLocationButton">Detect My Location</button>
+
+      <div class="favorites">
+        <h4>Favorites</h4>
+        <ul id="favoriteList"></ul>
+      </div>
+      <div class="time-box">
+        <span id="liveTime">--:--:--</span>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <!-- Current weather -->
+      <section class="current-weather">
+        <div class="location-info">
+          <h2 id="cityName">Dhaka</h2>
+          <p id="rainChance">Chance of rain: --%</p>
+        </div>
+        <div class="temp-info">
+          <h1 id="tempDisplay">--°C</h1>
+          <img id="weatherIcon" src="" alt="Weather Icon" />
+        </div>
+      </section>
+
+      <!-- Next 12 hours -->
+      <section class="hourly-forecast">
+        <h3>Next 12 Hours</h3>
+        <div id="hourlyForecast" class="scroll-box"></div>
+      </section>
+
+      <!-- Air conditions -->
+      <section class="air-conditions">
+        <div class="condition-card">
+          <p>Real Feel</p>
+          <strong id="realFeel">--°C</strong>
+        </div>
+        <div class="condition-card">
+          <p>Wind</p>
+          <strong id="windSpeed">-- km/h</strong>
+        </div>
+        <div class="condition-card">
+          <p>UV Index</p>
+          <strong id="uvIndex">--</strong>
+        </div>
+      </section>
+
+      <!-- Radar Map -->
+      <section class="radar-map">
+        <h3>Weather Radar</h3>
+        <iframe
+          src="https://embed.windy.com/embed2.html?lat=23.81&lon=90.41&detailLat=23.81&detailLon=90.41&zoom=5&level=surface&overlay=radar"
+          style="width: 100%; height: 500px; border: none; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
+        </iframe>
+      </section>
+    </main>
+
+    <!-- 7-day forecast -->
+    <aside class="weekly">
+      <h3>Day Forecast</h3>
+      <div id="weeklyForecast"></div>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

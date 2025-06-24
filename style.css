@@ -1,0 +1,275 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #1c1e26;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container */
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 90vh;
+  background: #2a2d3a;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* Sidebar */
+.sidebar {
+  background: #1f2230;
+  width: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 1px solid #333;
+}
+.sidebar input,
+.sidebar button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.sidebar input {
+  background: #2f3344;
+  color: #fff;
+}
+.sidebar button {
+  background: #3a7bfd;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+.sidebar button:active {
+  transform: scale(0.95);
+}
+
+/* Detect Location Button */
+#detectLocationButton {
+  background: #28a745; /* green */
+}
+
+/* Time box */
+.time-box {
+  margin-top: auto;
+  text-align: center;
+  background: #2e3242;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+.favorites h4 {
+  font-size: 16px;
+}
+#favoriteList {
+  list-style: none;
+  max-height: 120px;
+  overflow-y: auto;
+}
+#favoriteList li {
+  display: flex;
+  justify-content: space-between;
+  background: #2f3344;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+#favoriteList li span {
+  flex: 1;
+}
+#favoriteList li button {
+  background: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Current weather */
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2f3344;
+  padding: 20px;
+  border-radius: 15px;
+}
+.location-info h2 {
+  font-size: 2rem;
+}
+.temp-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.temp-info h1 {
+  font-size: 3rem;
+}
+.temp-info img {
+  width: 60px;
+  height: 60px;
+}
+
+/* Hourly forecast */
+.hourly-forecast {
+  background: #2f3344;
+  border-radius: 15px;
+  padding: 20px;
+}
+.scroll-box {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  margin-top: 10px;
+}
+.hour-card {
+  background: #3a3f52;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 80px;
+}
+.hour-card p {
+  margin: 5px 0;
+}
+
+/* Air conditions */
+.air-conditions {
+  display: flex;
+  gap: 20px;
+}
+.condition-card {
+  flex: 1;
+  background: #2f3344;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Weekly forecast */
+.weekly {
+  background: #1f2230;
+  width: 250px;
+  padding: 20px;
+  border-left: 1px solid #333;
+  overflow-y: auto;
+}
+.weekly h3 {
+  margin-bottom: 10px;
+}
+.week-day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+}
+.week-day:last-child {
+  border-bottom: none;
+}
+.week-day img {
+  width: 32px;
+  height: 32px;
+}
+
+/* ========== Responsive for Smartphones ========== */
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .container {
+    flex-direction: column;
+    height: auto;
+    width: 95%;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .sidebar,
+  .weekly {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    padding: 15px;
+  }
+
+  .sidebar {
+    order: 1;
+    border-bottom: 1px solid #444;
+  }
+
+  .main-content {
+    order: 2;
+    padding: 15px;
+  }
+
+  .weekly {
+    order: 3;
+    border-top: 1px solid #444;
+    overflow: hidden;
+  }
+
+  .current-weather,
+  .hourly-forecast,
+  .air-conditions {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .air-conditions {
+    flex-direction: column;
+  }
+
+  .temp-info h1 {
+    font-size: 2.2rem;
+  }
+
+  .location-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .temp-info img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .hour-card {
+    min-width: 60px;
+    padding: 8px;
+  }
+
+  .week-day span {
+    font-size: 14px;
+  }
+
+  iframe {
+    height: 300px !important;
+  }
+}
+
